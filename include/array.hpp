@@ -54,6 +54,12 @@ class Array {
         m_len = new_size;
     }
 
+    void resize(int64_t n_rows, int64_t n_cols) {
+        m_rows = n_rows;
+        m_cols = n_cols;
+        resize(m_rows * m_cols);
+    }
+
    private:
     int64_t m_len;
     int64_t m_rows;
