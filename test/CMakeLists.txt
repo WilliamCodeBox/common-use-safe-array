@@ -9,7 +9,7 @@ endif()
 add_executable(
   CousarTesting 
   main.cpp
-  test_exception.cpp
+  test_array.cpp
 )
 
 target_include_directories(
