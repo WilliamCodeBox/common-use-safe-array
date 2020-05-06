@@ -1,5 +1,5 @@
 # common-use-safe-array
 
-A safe array library for common usage, specially for scientific computation, implemented in modern Cpp
+Dynamic memory allocation for multi-dimensional array.
 
-**Warning**: Early stage, not ready to use.
+**Warning**: Just for learning purpose.

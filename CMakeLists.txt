@@ -9,7 +9,6 @@ option(BUILD_SHARED_LIBS "Build dynamic library." ON)
 ############################## Targets ########################################
 add_library(
   cousar 
-  "${PROJECT_SOURCE_DIR}/source/complex.cpp"
   "${PROJECT_SOURCE_DIR}/source/array.cpp"
   "${PROJECT_SOURCE_DIR}/source/exception.cpp"
 
