@@ -1,23 +1,20 @@
-find_package(Catch2 REQUIRED)
-if(TARGET Catch2::Catch2)
-  message("Found catch2")
-else()
-  message("Catch2 not found. Fetch Catch2 from github repository...")
-  # TODO: add fetchContent
-endif()
+enable_testing()
+#################################################################
+###                       Dependencies                        ###
+#################################################################
+find_package(Catch2 CONFIG REQUIRED)
 
-add_executable(
-  CousarTesting 
-  main.cpp
-  test_array.cpp
-)
+#################################################################
+###                         Sources                           ###
+#################################################################
+set(COUSAR_SOURCE_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/test_array.cpp)
 
-target_include_directories(
-  CousarTesting PRIVATE
-  "${PROJECT_SOURCE_DIR}/include"
-)
-target_link_libraries(
-  CousarTesting PRIVATE
-  Catch2::Catch2
-  cousar
-)
+#################################################################
+###                         Targets                           ###
+#################################################################
+add_executable            (CousarTesting main.cpp ${COUSAR_SOURCE_FILES})
+target_include_directories(CousarTesting PRIVATE "${PROJECT_SOURCE_DIR}/include")
+target_link_libraries     (CousarTesting PRIVATE Catch2::Catch2 cousar)
+
+add_test(NAME CousarTesting COMMAND CousarTesting)
